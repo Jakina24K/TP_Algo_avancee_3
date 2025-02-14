@@ -57,10 +57,9 @@ for (var elmt of position) {
                         turn.classList.add("player2");
 
                         if (gameOver(1)) {
-                            alert("Les rouges ont gagné!");
-                            window.location.reload();
+                            displayWinningMessage("les rouges ont gagné!");
                         } else {
-                            setTimeout(aiMove, 500); // Let AI make a move after a short delay
+                            setTimeout(aiMove, 1500); 
                         }
                     } else {
                         alert("Déplacement illegal!");
@@ -80,6 +79,12 @@ for (var elmt of position) {
     }, false);
 }
 
+function displayWinningMessage(message) {
+    var winningMessageDiv = document.getElementById("winning-message");
+    winningMessageDiv.innerText = message;
+    winningMessageDiv.style.display = "block";
+}
+
 function aiMove() {
     var bestMove = getBestMove();
     if (bestMove) {
@@ -93,8 +98,7 @@ function aiMove() {
         turn.classList.add("player1");
 
         if (gameOver(2)) {
-            alert("Les bleus ont gagné!");
-            window.location.reload();
+            displayWinningMessage("les bleus ont gagné!");
         }
     }
 }
