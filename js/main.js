@@ -1,7 +1,13 @@
 var startPosition = [
-    [1, 1, 0],
-    [1, 0, 2],
-    [0, 2, 2]
+    [1, 1, 1],
+    [0, 0, 0],
+    [2, 2, 2]
+];
+
+var hasMoved = [
+    [false, false, false],
+    [false, false, false],
+    [false, false, false]
 ];
 
 var position = document.querySelectorAll(".position");
@@ -193,6 +199,9 @@ function moveTo(id1, id2) {
 
     startPosition[end[0]][end[1]] = startPosition[start[0]][start[1]];
     startPosition[start[0]][start[1]] = 0;
+
+    hasMoved[start[0]][start[1]] = true;
+    hasMoved[end[0]][end[1]] = true;
 }
 
 function display() {
@@ -303,6 +312,14 @@ function isAlignedDiag(x) {
 }
 
 function gameOver(x) {
+    for (var i = 0; i < 3; i++) {
+        for (var j = 0; j < 3; j++) {
+            if (startPosition[i][j] == x && !hasMoved[i][j]) {
+                return false;
+            }
+        }
+    }
+
     if (isAlignedX(x) || isAlignedY(x) || isAlignedDiag(x))
         return true;
 
