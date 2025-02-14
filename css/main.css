@@ -197,3 +197,7 @@ body {
   height: 50px;
 
 }
+
+.restart {
+  display: none;
+}

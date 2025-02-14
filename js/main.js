@@ -15,6 +15,12 @@ var turn = document.querySelector(".container");
 
 var player = "p1";
 
+var restart = document.getElementById("restart-button");
+
+restart.addEventListener("click", function () {
+    window.location.reload();
+});
+
 for (var elmt of position) {
     var temp,
         from;
@@ -79,10 +85,12 @@ for (var elmt of position) {
     }, false);
 }
 
-function displayWinningMessage(message) {
+function displayWinningMessage(message, restart) {
     var winningMessageDiv = document.getElementById("winning-message");
     winningMessageDiv.innerText = message;
     winningMessageDiv.style.display = "block";
+    restart.style.display = "block";
+
 }
 
 function aiMove() {
