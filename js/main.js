@@ -32,7 +32,7 @@ for(var elmt of position){
                     turn.classList.add("moving");
                 }
                 else {
-                    alert("Anjarany katro fotsy no mihetsika!");
+                    alert("Autour de la case rouge!");
                 }
 
             }
@@ -51,7 +51,7 @@ for(var elmt of position){
                     turn.classList.add("moving");
                 }
                 else {
-                    alert("Anjarany katro miloko mena no mihetsika!");
+                    alert("Autour de la case bleue!");
                 }
 
             }
@@ -75,11 +75,11 @@ for(var elmt of position){
                         turn.classList.add("player2");
                     }
                     else {
-                        alert("Hakisao amin'ny faritra banga mifanila!");
+                        alert("Déplacement illegal!");
                     }
 
                     if(gameOver(1)){
-                        alert("Nivoka ho mpandresy ny Mpilalao miloko-fotsy");
+                        alert("Les rouges ont gagné!");
                         window.location.reload();
                     }
 
@@ -109,11 +109,11 @@ for(var elmt of position){
                         turn.classList.add("player1");
                     }
                     else {
-                        alert("Hakisao amin'ny faritra banga mifanila!");
+                        alert("Déplacement illégal!");
                     }
 
                     if(gameOver(2)){
-                        alert("Nivoka ho mpandresy ny Mpilalao miloko-mena");
+                        alert("Les bleus ont gagné!");
                         window.location.reload();
                     }
 
